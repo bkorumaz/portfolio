@@ -1,0 +1,26 @@
+{
+  "backgroundType": "plain",
+  "plainBackgroundMode": "daylight",
+  "devIntro": "bahadır korumaz",
+  "devDesc": "React | Javascript | Redux | Spring Boot | Java",
+  "gradientColors": "#EE7752, #E73C7E, #23A6D5, #23D5AB",
+  "backgroundImageUrl": "http://hdwpro.com/wp-content/uploads/2017/03/Art-Background-Image.png",
+  "icons": [
+    {
+      "image": "fa-github",
+      "url": "https://github.com/bkorumaz"
+    },
+    {
+      "image": "fa-twitter",
+      "url": "https://github.com/"
+    },
+    {
+      "image": "fa-stack-overflow",
+      "url": "https://stackoverflow.com/"
+    },
+    {
+      "image": "fa-linkedin",
+      "url": "https://www.linkedin.com/"
+    }
+  ]
+}
