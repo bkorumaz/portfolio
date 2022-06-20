@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css';
 import Configs from './configurations.json';
 import ParticlesBg from 'particles-bg'
-import Typist from 'react-text-typist'
+import Typed from 'react-typed'
 
 function App() {
   const [darkBackgroundModes, setDarkBackgroundModes] = useState([
@@ -43,9 +43,21 @@ function App() {
             <ParticlesBg type="thick" bg={true} />
             <div className="container">
               <h1 className="intro">{devIntro}</h1>
-              <div className="shell">npm i your-lib --save</div>
+              <div className="shell">full stack developer</div>
               <div className="tagline">
-                <Typist>{devDesc}</Typist>
+              <Typed
+                strings={[
+                  "React",
+                  "Javascript",
+                  "Spring Boot",
+                  "Java",
+                  "MySQL",
+                  "Redux",
+                ]}
+                typeSpeed={75}
+                backSpeed={50}
+                loop
+              />
               </div>
               
               <div className="icons-social">
