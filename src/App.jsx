@@ -1,8 +1,11 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import './App.css';
 import Configs from './configurations.json';
-import ParticlesBg from 'particles-bg'
-import Typed from 'react-typed'
+import ParticlesBg from 'particles-bg';
+import Typed from 'react-typed';
+import UseAnimations from "react-useanimations";
+
+import { BsStackOverflow, BsLinkedin, BsGithub, BsFillFileEarmarkPersonFill } from 'react-icons/bs';
 
 function App() {
   const [darkBackgroundModes, setDarkBackgroundModes] = useState([
@@ -33,6 +36,10 @@ function App() {
   const [bgStyle, setBgStyle] = useState({})
   const [icons, setIcons] = useState(Configs.icons || [])
 
+  const iconStyle = {
+    margin: '10px'
+  }
+
 
   return (
     <div className={appClass} style={bgStyle}>
@@ -60,16 +67,26 @@ function App() {
               </div>
               
               <div className="icons-social">
-                {icons.map((icon, i) => (
-                  <a
-                    target="_blank"
-                    key={i}
-                    rel="noopener noreferrer"
-                    href={`${icon.url}`}
-                  >
-                    <i className={`fab ${icon.image}`} />
-                  </a>
-                ))}
+                <BsGithub
+                  size={"2em"}
+                  style={iconStyle}
+                  title="GitHub"
+                />
+                <BsLinkedin
+                   size={"2em"}
+                   style={iconStyle}
+                   title="Linkedin"
+                />
+                <BsStackOverflow
+                   size={"2em"}
+                   style={iconStyle}
+                   title="Stack-overflow"
+                />
+                <BsFillFileEarmarkPersonFill
+                   size={"2em"}
+                   style={iconStyle}
+                   title="Resume"
+                />
               </div>
             </div>
           </main>
