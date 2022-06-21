@@ -51,7 +51,6 @@ function App() {
                   "Javascript",
                   "Spring Boot",
                   "Java",
-                  "MySQL",
                   "Redux",
                 ]}
                 typeSpeed={75}
