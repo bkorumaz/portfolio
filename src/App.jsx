@@ -3,7 +3,6 @@ import './App.css';
 import Configs from './configurations.json';
 import ParticlesBg from 'particles-bg';
 import Typed from 'react-typed';
-import UseAnimations from "react-useanimations";
 
 import { BsStackOverflow, BsLinkedin, BsGithub, BsFillFileEarmarkPersonFill } from 'react-icons/bs';
 
