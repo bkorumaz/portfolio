@@ -3,7 +3,6 @@ import "./App.css";
 import Configs from "./configurations.json";
 import ParticlesBg from "particles-bg";
 import Typed from "react-typed";
-import { motion } from "framer-motion";
 
 import {
   BsStackOverflow,
@@ -11,6 +10,7 @@ import {
   BsGithub,
   BsFillFileEarmarkPersonFill,
 } from "react-icons/bs";
+import AnimatedIconWrapper from "./components/animated-icon-wrapper/animated-icon-wrapper";
 
 function App() {
   const [darkBackgroundModes, setDarkBackgroundModes] = useState([
@@ -76,24 +76,28 @@ function App() {
             </div>
 
             <div className="icons-social">
-              <motion.div
-                whileHover={{
-                  scale: 1.1,
-                }}
-              >
-                <BsGithub size={"2em"} style={iconStyle} title="GitHub" />
-                <BsLinkedin size={"2em"} style={iconStyle} title="Linkedin" />
-                <BsStackOverflow
-                  size={"2em"}
-                  style={iconStyle}
-                  title="Stack-overflow"
-                />
-                <BsFillFileEarmarkPersonFill
-                  size={"2em"}
-                  style={iconStyle}
-                  title="Resume"
-                />
-              </motion.div>
+              <div class="flex-container">
+                <AnimatedIconWrapper className={"flex-child magenta"}>
+                  <BsGithub size={"2em"} style={iconStyle} title="GitHub" />
+                </AnimatedIconWrapper>
+                <AnimatedIconWrapper className={"flex-child magenta"}>
+                  <BsLinkedin size={"2em"} style={iconStyle} title="Linkedin" />
+                </AnimatedIconWrapper>
+                <AnimatedIconWrapper className={"flex-child magenta"}>
+                  <BsStackOverflow
+                    size={"2em"}
+                    style={iconStyle}
+                    title="Stack-overflow"
+                  />
+                </AnimatedIconWrapper>
+                <AnimatedIconWrapper className={"flex-child magenta"}>
+                  <BsFillFileEarmarkPersonFill
+                    size={"2em"}
+                    style={iconStyle}
+                    title="Resume"
+                  />
+                </AnimatedIconWrapper>
+              </div>
             </div>
           </div>
         </main>

@@ -409,3 +409,12 @@
 .full-bg-image .icons-social a svg path {
   fill: #fff;
 }
+
+.flex-container {
+  display: flex;
+}
+
+.flex-child {
+  flex: 1;
+  /*border: 2px solid yellow;*/
+}
