@@ -3,6 +3,7 @@ import './App.css';
 import Configs from './configurations.json';
 import ParticlesBg from 'particles-bg';
 import Typed from 'react-typed';
+import {motion} from 'framer-motion'
 
 import { BsStackOverflow, BsLinkedin, BsGithub, BsFillFileEarmarkPersonFill } from 'react-icons/bs';
 
@@ -66,11 +67,17 @@ function App() {
               </div>
               
               <div className="icons-social">
-                <BsGithub
-                  size={"2em"}
-                  style={iconStyle}
-                  title="GitHub"
-                />
+                <motion.div
+                  whileHover=
+                    {{
+                        scale:1.1
+                    }}
+                >
+                  <BsGithub
+                    size={"2em"}
+                    style={iconStyle}
+                    title="GitHub"
+                  />
                 <BsLinkedin
                    size={"2em"}
                    style={iconStyle}
@@ -86,6 +93,8 @@ function App() {
                    style={iconStyle}
                    title="Resume"
                 />
+                
+                </motion.div>
               </div>
             </div>
           </main>
