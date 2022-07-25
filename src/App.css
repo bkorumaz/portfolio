@@ -412,6 +412,8 @@
 
 .flex-container {
   display: flex;
+  justify-content: space-between;
+  width: 18rem;
 }
 
 .flex-child {

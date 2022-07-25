@@ -62,13 +62,7 @@ function App() {
             <div className="shell">full stack developer</div>
             <div className="tagline">
               <Typed
-                strings={[
-                  "React",
-                  "Javascript",
-                  "Spring Boot",
-                  "Java",
-                  "Redux",
-                ]}
+                strings={["React", "Javascript", "Spring Boot", "Java", "Node"]}
                 typeSpeed={75}
                 backSpeed={50}
                 loop
@@ -77,20 +71,20 @@ function App() {
 
             <div className="icons-social">
               <div class="flex-container">
-                <AnimatedIconWrapper className={"flex-child magenta"}>
+                <AnimatedIconWrapper className={"flex-child"}>
                   <BsGithub size={"2em"} style={iconStyle} title="GitHub" />
                 </AnimatedIconWrapper>
-                <AnimatedIconWrapper className={"flex-child magenta"}>
+                <AnimatedIconWrapper className={"flex-child"}>
                   <BsLinkedin size={"2em"} style={iconStyle} title="Linkedin" />
                 </AnimatedIconWrapper>
-                <AnimatedIconWrapper className={"flex-child magenta"}>
+                <AnimatedIconWrapper className={"flex-child"}>
                   <BsStackOverflow
                     size={"2em"}
                     style={iconStyle}
                     title="Stack-overflow"
                   />
                 </AnimatedIconWrapper>
-                <AnimatedIconWrapper className={"flex-child magenta"}>
+                <AnimatedIconWrapper className={"flex-child"}>
                   <BsFillFileEarmarkPersonFill
                     size={"2em"}
                     style={iconStyle}
