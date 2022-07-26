@@ -3,6 +3,8 @@ import "./App.css";
 import Configs from "./configurations.json";
 import ParticlesBg from "particles-bg";
 import Typed from "react-typed";
+import AnimatedIconWrapper from "./components/animated-icon-wrapper/animated-icon-wrapper";
+import { motion } from "framer-motion";
 
 import {
   BsStackOverflow,
@@ -10,7 +12,7 @@ import {
   BsGithub,
   BsFillFileEarmarkPersonFill,
 } from "react-icons/bs";
-import AnimatedIconWrapper from "./components/animated-icon-wrapper/animated-icon-wrapper";
+import AnimatedBox from "./components/animated-box/animated-box";
 
 function App() {
   const [darkBackgroundModes, setDarkBackgroundModes] = useState([
@@ -52,6 +54,17 @@ function App() {
     margin: "10px",
   };
 
+  const SvgGradient = () => {
+    return (
+      <svg width="0" height="0">
+        <linearGradient id="blue-gradient" x1="100%" y1="100%" x2="0%" y2="0%">
+          <stop stopColor="#a18cd1" offset="0%" />
+          <stop stopColor="#fbc2eb" offset="100%" />
+        </linearGradient>
+      </svg>
+    );
+  };
+
   return (
     <div className={appClass} style={bgStyle}>
       <div className={backgroundMode}>
@@ -70,28 +83,41 @@ function App() {
             </div>
 
             <div className="icons-social">
-              <div class="flex-container">
+              <div className="flex-container">
                 <AnimatedIconWrapper className={"flex-child"}>
-                  <BsGithub size={"2em"} style={iconStyle} title="GitHub" />
+                  <SvgGradient />
+                  <BsGithub
+                    size={"2em"}
+                    style={{ fill: "url(#blue-gradient)" }}
+                    title="GitHub"
+                  />
                 </AnimatedIconWrapper>
                 <AnimatedIconWrapper className={"flex-child"}>
-                  <BsLinkedin size={"2em"} style={iconStyle} title="Linkedin" />
+                  <SvgGradient />
+                  <BsLinkedin
+                    size={"2em"}
+                    style={{ fill: "url(#blue-gradient)" }}
+                    title="Linkedin"
+                  />
                 </AnimatedIconWrapper>
                 <AnimatedIconWrapper className={"flex-child"}>
+                  <SvgGradient />
                   <BsStackOverflow
                     size={"2em"}
-                    style={iconStyle}
+                    style={{ fill: "url(#blue-gradient)" }}
                     title="Stack-overflow"
                   />
                 </AnimatedIconWrapper>
                 <AnimatedIconWrapper className={"flex-child"}>
+                  <SvgGradient />
                   <BsFillFileEarmarkPersonFill
                     size={"2em"}
-                    style={iconStyle}
                     title="Resume"
+                    style={{ fill: "url(#blue-gradient)" }}
                   />
                 </AnimatedIconWrapper>
               </div>
+              {/* <AnimatedBox /> */}
             </div>
           </div>
         </main>
