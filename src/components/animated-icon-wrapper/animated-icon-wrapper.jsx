@@ -19,6 +19,9 @@ const AnimatedIconWrapper = ({ children, className }) => {
         whileHover={{
           scale: 1.2,
         }}
+        transition={{
+          duration: 0.5,
+        }}
       >
         {children}
       </motion.div>
