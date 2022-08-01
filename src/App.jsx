@@ -1,10 +1,10 @@
-import { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./App.css";
 import Configs from "./configurations.json";
 import ParticlesBg from "particles-bg";
 import Typed from "react-typed";
 import AnimatedIconWrapper from "./components/animated-icon-wrapper/animated-icon-wrapper";
-import { motion } from "framer-motion";
+import ResumePdf from "./resources/resume.pdf";
 
 import {
   BsStackOverflow,
@@ -54,17 +54,6 @@ function App() {
     margin: "10px",
   };
 
-  const SvgGradient = () => {
-    return (
-      <svg width="0" height="0">
-        <linearGradient id="blue-gradient" x1="100%" y1="100%" x2="0%" y2="0%">
-          <stop stopColor="#a18cd1" offset="0%" />
-          <stop stopColor="#fbc2eb" offset="100%" />
-        </linearGradient>
-      </svg>
-    );
-  };
-
   return (
     <div className={appClass} style={bgStyle}>
       <div className={backgroundMode}>
@@ -84,37 +73,28 @@ function App() {
 
             <div className="icons-social">
               <div className="flex-container">
-                <AnimatedIconWrapper className={"flex-child"}>
-                  <SvgGradient />
-                  <BsGithub
-                    size={"2em"}
-                    style={{ fill: "url(#blue-gradient)" }}
-                    title="GitHub"
-                  />
+                <AnimatedIconWrapper
+                  className="flex-child"
+                  link="https://github.com/bkorumaz"
+                >
+                  <BsGithub title="GitHub" size={"2em"} />
                 </AnimatedIconWrapper>
-                <AnimatedIconWrapper className={"flex-child"}>
-                  <SvgGradient />
-                  <BsLinkedin
-                    size={"2em"}
-                    style={{ fill: "url(#blue-gradient)" }}
-                    title="Linkedin"
-                  />
+                <AnimatedIconWrapper
+                  className="flex-child"
+                  link="https://www.linkedin.com/in/bahadir-korumaz"
+                >
+                  <BsLinkedin title="LinkedIn" size={"2em"} />
                 </AnimatedIconWrapper>
-                <AnimatedIconWrapper className={"flex-child"}>
-                  <SvgGradient />
-                  <BsStackOverflow
-                    size={"2em"}
-                    style={{ fill: "url(#blue-gradient)" }}
-                    title="Stack-overflow"
-                  />
+                <AnimatedIconWrapper
+                  className="flex-child"
+                  link="https://stackoverflow.com/users/10059467/bahad%c4%b1r-korumaz"
+                >
+                  <BsStackOverflow title="StackOverflow" size={"2em"} />
                 </AnimatedIconWrapper>
-                <AnimatedIconWrapper className={"flex-child"}>
-                  <SvgGradient />
-                  <BsFillFileEarmarkPersonFill
-                    size={"2em"}
-                    title="Resume"
-                    style={{ fill: "url(#blue-gradient)" }}
-                  />
+                <AnimatedIconWrapper className="flex-child">
+                  <a onClick={() => window.open(ResumePdf)}>
+                    <BsFillFileEarmarkPersonFill title="Resume" size={"2em"} />
+                  </a>
                 </AnimatedIconWrapper>
               </div>
               {/* <AnimatedBox /> */}
