@@ -54,43 +54,6 @@ function App() {
     margin: "10px",
   };
 
-  const [degree, setDegree] = React.useState(0);
-  const [delay, setDelay] = useState(100);
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setDegree((prevDegree) => (prevDegree < 360 ? prevDegree + 1 : 0)); // <-- Change this line!
-      console.log("degree:", degree);
-    }, delay);
-    return () => {
-      window.clearInterval(timer);
-    };
-  }, []);
-
-  const SvgGradient = () => {
-    return (
-      <svg width="0" height="0">
-        <motion.linearGradient
-          id="blue-gradient"
-          x1="100%"
-          y1="100%"
-          x2="0%"
-          y2="0%"
-          animate={{
-            gradientTransform: `rotate(${degree % 360})`,
-          }}
-        >
-          <stop stopColor="#000000" offset="0%" />
-          <stop stopColor="#ffffff" offset="100%" />
-        </motion.linearGradient>
-        {/* <linearGradient id="blue-gradient" x1="100%" y1="100%" x2="0%" y2="0%">
-          <stop stopColor="#a18cd1" offset="0%" />
-          <stop stopColor="#fbc2eb" offset="100%" />
-        </linearGradient> */}
-      </svg>
-    );
-  };
-
   return (
     <div className={appClass} style={bgStyle}>
       <div className={backgroundMode}>
@@ -110,47 +73,18 @@ function App() {
 
             <div className="icons-social">
               <div className="flex-container">
-                {/* animated icon begin */}
-                <motion.div
-                  className="flex-child"
-                  animate={{
-                    scale: [1.2, 1.3, 1.4, 1.4, 1.3, 1],
-                    rotate: [0, 0, 270, 270, 0, 0],
-                    borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-                    delay: 0.2,
-                  }}
-                  transition={{
-                    duration: 1.5,
-                  }}
-                >
-                  <motion.div
-                    whileHover={{
-                      scale: 1.2,
-                    }}
-                    onHoverStart={(e) => {
-                      setDelay(30);
-                    }}
-                    onHoverEnd={(e) => {
-                      setDelay(100);
-                    }}
-                    transition={{
-                      duration: 0.2,
-                    }}
-                    size={"7em"}
-                    style={{ fill: "url(#blue-gradient)" }}
-                  >
-                    <SvgGradient />
-                    <BsGithub
-                      title="GitHub"
-                      size={"2em"}
-                      style={{ fill: "url(#blue-gradient)" }}
-                    />
-                  </motion.div>
-                </motion.div>
-                {/* animated icon end */}
-                <div className="flex-child"></div>
-                <div className="flex-child"></div>
-                <div className="flex-child"></div>
+                <AnimatedIconWrapper className="flex-child">
+                  <BsGithub title="GitHub" size={"2em"} />
+                </AnimatedIconWrapper>
+                <AnimatedIconWrapper className="flex-child">
+                  <BsLinkedin title="LinkedIn" size={"2em"} />
+                </AnimatedIconWrapper>
+                <AnimatedIconWrapper className="flex-child">
+                  <BsStackOverflow title="StackOverflow" size={"2em"} />
+                </AnimatedIconWrapper>
+                <AnimatedIconWrapper className="flex-child">
+                  <BsFillFileEarmarkPersonFill title="Resume" size={"2em"} />
+                </AnimatedIconWrapper>
               </div>
               {/* <AnimatedBox /> */}
             </div>
