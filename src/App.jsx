@@ -4,7 +4,7 @@ import Configs from "./configurations.json";
 import ParticlesBg from "particles-bg";
 import Typed from "react-typed";
 import AnimatedIconWrapper from "./components/animated-icon-wrapper/animated-icon-wrapper";
-import { motion } from "framer-motion";
+import ResumePdf from "./resources/resume.pdf";
 
 import {
   BsStackOverflow,
@@ -73,17 +73,28 @@ function App() {
 
             <div className="icons-social">
               <div className="flex-container">
-                <AnimatedIconWrapper className="flex-child">
+                <AnimatedIconWrapper
+                  className="flex-child"
+                  link="https://github.com/bkorumaz"
+                >
                   <BsGithub title="GitHub" size={"2em"} />
                 </AnimatedIconWrapper>
-                <AnimatedIconWrapper className="flex-child">
+                <AnimatedIconWrapper
+                  className="flex-child"
+                  link="https://www.linkedin.com/in/bahadir-korumaz"
+                >
                   <BsLinkedin title="LinkedIn" size={"2em"} />
                 </AnimatedIconWrapper>
-                <AnimatedIconWrapper className="flex-child">
+                <AnimatedIconWrapper
+                  className="flex-child"
+                  link="https://stackoverflow.com/users/10059467/bahad%c4%b1r-korumaz"
+                >
                   <BsStackOverflow title="StackOverflow" size={"2em"} />
                 </AnimatedIconWrapper>
                 <AnimatedIconWrapper className="flex-child">
-                  <BsFillFileEarmarkPersonFill title="Resume" size={"2em"} />
+                  <a onClick={() => window.open(ResumePdf)}>
+                    <BsFillFileEarmarkPersonFill title="Resume" size={"2em"} />
+                  </a>
                 </AnimatedIconWrapper>
               </div>
               {/* <AnimatedBox /> */}

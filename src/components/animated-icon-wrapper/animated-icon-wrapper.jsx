@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const AnimatedIconWrapper = ({ children, className }) => {
+const AnimatedIconWrapper = ({ children, className, link }) => {
   const whiteColorset = ["#FFFFFF", "#FFFFFF"];
   const gradientColorset = ["#81FFEF", "#F067B4"];
   const [onHover, setOnHover] = useState(true);
@@ -78,7 +78,9 @@ const AnimatedIconWrapper = ({ children, className }) => {
         style={{ fill: "url(#blue-gradient)" }}
       >
         <SvgGradient />
-        {children}
+        <a target="_blank" rel="noopener noreferrer" href={link}>
+          {children}
+        </a>
       </motion.div>
     </motion.div>
   );
